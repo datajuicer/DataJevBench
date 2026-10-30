@@ -21,7 +21,7 @@
   },
   "files": {
     ".github/workflows/tests.yml": "4e99613d016668a8d3582cf6df6279def5d2a30e85b2f03042d8dcb36b78125f",
-    ".gitignore": "e70b589751962fd7e8942302f07356f04db183023307594c60e9671cebd4c57e",
+    ".gitignore": "bcaef38745c1b5ba82c1657cde4b9f9ba2321f5042ff1bbbd8c9666db84b74e6",
     "LICENSE": "92d3c0108445311d74274720b1cb8b7f130d510705fb32e2189fec8bd37cf18c",
     "MANIFEST.in": "4fe47bee33ef410d267d8ff9e5629c81f503ab5e4e77aa64de32ff7b2454a4f0",
     "README.md": "7407d206ba41404bd2267c68278faa28fd8fcf646e43a70d0cba4b77b1ffff8a",

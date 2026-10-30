@@ -8,7 +8,8 @@ import shutil
 import subprocess
 
 
-PUBLICATION_VERSION = "0.5.3"
+PUBLICATION_VERSION = "0.5.4"
+PUBLICATION_MANIFEST = "releases/publication.json"
 DATA_FILES = ("benchmark/records.jsonl", "benchmark/inputs.jsonl")
 
 
@@ -33,7 +34,7 @@ def build_manifest(root):
     hashes = {}
     for path in source_files(root):
         name = path.relative_to(root).as_posix()
-        if name == "MANIFEST.json":
+        if name == PUBLICATION_MANIFEST:
             continue
         if path.is_symlink():
             raise ValueError(f"Source manifest cannot include a symlink: {name}")
@@ -58,7 +59,7 @@ def build_manifest(root):
 
 
 def check_manifest(root):
-    path = Path(root) / "MANIFEST.json"
+    path = Path(root) / PUBLICATION_MANIFEST
     expected = build_manifest(root)
     if not path.is_file() or json.loads(path.read_text(encoding="utf-8")) != expected:
         raise ValueError("Source manifest is stale; run python scripts/release_manifest.py --write")
@@ -67,12 +68,12 @@ def check_manifest(root):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write", action="store_true", help="Regenerate MANIFEST.json")
+    parser.add_argument("--write", action="store_true", help=f"Regenerate {PUBLICATION_MANIFEST}")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     if args.write:
         manifest = build_manifest(root)
-        (root / "MANIFEST.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+        (root / PUBLICATION_MANIFEST).write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
                                            encoding="utf-8")
     else:
         manifest = check_manifest(root)

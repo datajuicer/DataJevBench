@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,12 +7,20 @@ name = "datajevbench-leaderboard"
 version = "0.5"
 description = "DataJevBench v0.5 evaluation of decisions in data workflows"
 readme = "README.md"
-license = {file = "LICENSE"}
+license = "Apache-2.0"
+license-files = ["LICENSE", "docs/NOTICE"]
 requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
 datajevbench = "datajevbench.cli:main"
 
-[tool.setuptools.packages.find]
-include = ["datajevbench*"]
+[tool.setuptools]
+packages = ["datajevbench", "datajevbench._data"]
+include-package-data = false
+
+[tool.setuptools.package-dir]
+"datajevbench._data" = "releases/v0.5"
+
+[tool.setuptools.package-data]
+"datajevbench._data" = ["manifest.json"]

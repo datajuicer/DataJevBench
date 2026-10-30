@@ -1,6 +1,6 @@
 # Contributing
 
-Use Python 3.10+. Keep task state, question and ordered candidates unchanged across inference implementations. The [quick start](docs/quickstart.md) covers verification, inference and saved-run scoring; [deployment](docs/deployment.md) describes model integration.
+Use Python 3.10+. Run the commands below from the repository root. Keep task state, question and ordered candidates unchanged across inference implementations. The [quick start](quickstart.md) covers verification, inference and saved-run scoring; [deployment](deployment.md) describes model integration.
 
 ## Contributions
 
@@ -46,9 +46,9 @@ Generate the shared illustration with `python scripts/atlas_illustration.py`, wh
 
 ## Data and releases
 
-The public task pair is included; its format is documented in [benchmark/README.md](benchmark/README.md). [Publication policy](docs/data-publication.md) specifies stable IDs, minimal provenance, original/public hashes and historical-run identity. Keep the original-to-public ID mapping outside source control. Keep audits, raw runs, model weights, credentials and local deployment settings outside source control.
+The public task pair is included; its format is documented in [benchmark/README.md](../benchmark/README.md). [Publication policy](data-publication.md) specifies stable IDs, minimal provenance, original/public hashes and historical-run identity. Keep the original-to-public ID mapping outside source control. Keep audits, raw runs, model weights, credentials and local deployment settings outside source control.
 
-The content manifest remains in `releases/v0.5/manifest.json`. The root `MANIFEST.json` is generated source-publication metadata; it excludes its own hash. After source changes, regenerate it and validate:
+The content manifest remains in `releases/v0.5/manifest.json`. `releases/publication.json` is generated source-publication metadata; it excludes its own hash. After source changes, regenerate it and validate:
 
 ```bash
 python scripts/release_manifest.py --write
@@ -61,4 +61,8 @@ Increment `PUBLICATION_VERSION` in `scripts/release_manifest.py` for a new sourc
 python scripts/export_public.py --output /tmp/datajevbench-v0.5-source.tar.gz
 ```
 
-Do not describe manifest checks or snapshot validation as historical replay. The source package does not include the historical per-task predictions; see [reproducibility](docs/reproducibility.md).
+Do not describe manifest checks or snapshot validation as historical replay. The source package does not include the historical per-task predictions; see [reproducibility](reproducibility.md).
+
+## Packaging
+
+`pyproject.toml` defines installation, package data and license files. It maps the existing v0.5 manifest into the installed package without a custom build script or a second source copy. `MANIFEST.in` selects the documentation, benchmark and other files included in source distributions; it is separate from the generated publication hashes. Attribution is retained in [NOTICE](NOTICE).

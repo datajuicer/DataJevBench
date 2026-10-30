@@ -15,7 +15,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_site import build
-from release_manifest import build_manifest, check_manifest
+from release_manifest import PUBLICATION_MANIFEST, build_manifest, check_manifest
 
 
 class PublicationTest(unittest.TestCase):
@@ -29,8 +29,8 @@ class PublicationTest(unittest.TestCase):
             document.write_text("Original publication\n", encoding="utf-8")
             manifest = build_manifest(root)
             self.assertEqual(manifest["data"]["status"], "pending_import")
-            self.assertNotIn("MANIFEST.json", manifest["files"])
-            (root / "MANIFEST.json").write_text(json.dumps(manifest), encoding="utf-8")
+            self.assertNotIn(PUBLICATION_MANIFEST, manifest["files"])
+            (root / PUBLICATION_MANIFEST).write_text(json.dumps(manifest), encoding="utf-8")
             self.assertEqual(check_manifest(root), manifest)
             document.write_text("Changed publication\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "stale"):

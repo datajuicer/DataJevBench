@@ -2,7 +2,7 @@
 
 ## Content version and source publication
 
-The benchmark content version is **v0.5**: 500 tasks across D1–D6 and a frozen scoring contract. [releases/v0.5/manifest.json](../releases/v0.5/manifest.json) pins task bytes, model-input bytes and scorer bytes. [MANIFEST.json](../MANIFEST.json) separately identifies the source publication, hashes its files and records data availability. Changing directories or documentation does not create new benchmark content.
+The benchmark content version is **v0.5**: 500 tasks across D1–D6 and a frozen scoring contract. [releases/v0.5/manifest.json](../releases/v0.5/manifest.json) pins task bytes, model-input bytes and scorer bytes. [releases/publication.json](../releases/publication.json) separately identifies the source publication, hashes its files and records data availability. Changing directories or documentation does not create new benchmark content.
 
 The approved public data paths are `benchmark/records.jsonl` and `benchmark/inputs.jsonl`. Both files are included. Public IDs and non-scoring metadata were normalized without changing task content or references. The current manifest pins the public files, preserves original hashes in `source_files`, and records equal semantic and HTTP-visible request digests. The immutable [source manifest](../releases/v0.5/source-manifest.json) identifies the original data pair. Reference answers remain outside model requests even when publicly available.
 

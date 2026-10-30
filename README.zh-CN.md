@@ -4,7 +4,7 @@
 
 **500 道题 · 6 个子集 · 中英双语 · v0.5**
 
-[任务设计](docs/design.md) · [评测结果](#评测结果) · [快速开始](#快速开始) · [贡献指南](CONTRIBUTING.md) · [引用](#引用)
+[任务设计](docs/design.md) · [评测结果](#评测结果) · [快速开始](#快速开始) · [贡献指南](docs/CONTRIBUTING.md) · [引用](#引用)
 
 > 数据：500 道题及参考答案已包含在 [benchmark/](benchmark/README.md)。公开 ID 采用 `D1-<16位哈希>` 格式，题目内容和 v0.5 评分器保持不变，详见[数据发布与 ID 规则](docs/data-publication.md)。
 
@@ -128,13 +128,13 @@ PYTHONDONTWRITEBYTECODE=1 python scripts/check_repo.py
 
 ## 数据与许可证
 
-代码、文档和插图采用 [Apache-2.0](LICENSE)。500 题及参考答案已包含在仓库中；[数据说明](benchmark/README.md)列出文件结构和哈希校验要求，[发布说明](docs/data-publication.md)记录 ID 与元数据的规范化方式。底层数据来源继续保留各自的条款与署名，见[来源说明](releases/v0.5/source-notices.md)。
+代码、文档和插图采用 [Apache-2.0](LICENSE)，署名声明保留在 [NOTICE](docs/NOTICE)。500 题及参考答案已包含在仓库中；[数据说明](benchmark/README.md)列出文件结构和哈希校验要求，[发布说明](docs/data-publication.md)记录 ID 与元数据的规范化方式。底层数据来源继续保留各自的条款与署名，见[来源说明](releases/v0.5/source-notices.md)。
 
 ## 仓库导航
 
 - **评测集：** [任务设计](docs/design.md) · [数据目录](benchmark/README.md) · [v0.5 元数据](docs/release.md)
 - **运行评测：** [运行指南](docs/quickstart.md) · [模型部署](docs/deployment.md) · [评分协议](docs/protocol.md)
-- **结果与发布：** [结果数据](results/leaderboard.json) · [复现说明](docs/reproducibility.md) · [源码清单](MANIFEST.json) · [网站预览](CONTRIBUTING.md#site-and-illustration)
+- **结果与发布：** [结果数据](results/leaderboard.json) · [复现说明](docs/reproducibility.md) · [源码清单](releases/publication.json) · [网站预览](docs/CONTRIBUTING.md#site-and-illustration)
 
 ## 引用
 

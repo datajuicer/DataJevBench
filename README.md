@@ -4,7 +4,7 @@
 
 **500 tasks · 6 subsets · English + Chinese · v0.5**
 
-[Design](docs/design.md) · [Results](#results) · [Quick start](#quick-start) · [Contributing](CONTRIBUTING.md) · [Citation](#citation)
+[Design](docs/design.md) · [Results](#results) · [Quick start](#quick-start) · [Contributing](docs/CONTRIBUTING.md) · [Citation](#citation)
 
 > Data: all 500 tasks and reference answers are included in [benchmark/](benchmark/README.md). Public IDs use `D1-<16 hex digits>`; task content and the v0.5 scorer are unchanged. See [publication and ID policy](docs/data-publication.md).
 
@@ -128,13 +128,13 @@ PYTHONDONTWRITEBYTECODE=1 python scripts/check_repo.py
 
 ## Data and license
 
-Code, documentation and illustrations use [Apache-2.0](LICENSE). All 500 tasks and reference answers are included. [Data format](benchmark/README.md) documents the files and hash checks; [publication notes](docs/data-publication.md) record the original-to-public ID and metadata projection. Underlying sources retain their terms and attribution in the [source notices](releases/v0.5/source-notices.md).
+Code, documentation and illustrations use [Apache-2.0](LICENSE); attribution is retained in [NOTICE](docs/NOTICE). All 500 tasks and reference answers are included. [Data format](benchmark/README.md) documents the files and hash checks; [publication notes](docs/data-publication.md) record the original-to-public ID and metadata projection. Underlying sources retain their terms and attribution in the [source notices](releases/v0.5/source-notices.md).
 
 ## Repository guide
 
 - **Benchmark:** [Task design](docs/design.md) · [Data directory](benchmark/README.md) · [v0.5 metadata](docs/release.md)
 - **Evaluation:** [Quick start](docs/quickstart.md) · [Model deployment](docs/deployment.md) · [Scoring protocol](docs/protocol.md)
-- **Results and releases:** [Result data](results/leaderboard.json) · [Reproducibility](docs/reproducibility.md) · [Source manifest](MANIFEST.json) · [Site preview](CONTRIBUTING.md#site-and-illustration)
+- **Results and releases:** [Result data](results/leaderboard.json) · [Reproducibility](docs/reproducibility.md) · [Source manifest](releases/publication.json) · [Site preview](docs/CONTRIBUTING.md#site-and-illustration)
 
 ## Citation
 

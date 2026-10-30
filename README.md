@@ -1,20 +1,26 @@
-# DataJevBench v0.5
+# DataJevBench
 
-[简体中文](README.zh-CN.md)
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-**500 tasks · 6 subsets · English + Chinese · v0.5**
+**Evaluating decisions in data workflows.**<br>
+500 tasks · 6 subsets · English + Chinese · v0.5
 
 [Design](docs/design.md) · [Results](#results) · [Quick start](#quick-start) · [Contributing](docs/CONTRIBUTING.md) · [Citation](#citation)
 
-> Data: all 500 tasks and reference answers are included in [benchmark/](benchmark/README.md). Public IDs use `D1-<16 hex digits>`; task content and the v0.5 scorer are unchanged. See [publication and ID policy](docs/data-publication.md).
+---
 
 DataJevBench evaluates **decisions within data workflows**: which records to keep, which processing steps to choose, how to judge output quality, whether evidence supports an analysis, and what action to take next.
+
+Developed by the [**DataJuicer Team**](https://github.com/datajuicer), the benchmark compares models on shared task inputs and scoring rules to identify their strengths and limitations across data decisions. All [500 tasks and reference answers](benchmark/README.md) are openly available.
+
+> [!NOTE]
+> **Supported in part by [Data-Juicer](https://github.com/datajuicer/data-juicer).** Parts of the evaluation set are built using its data-processing operators and documentation, connecting benchmark decisions to practical data workflows.
 
 ## Why these decisions?
 
 Data quality depends on choices throughout a workflow. Filtering determines which material enters a dataset. Processing plans determine how that material is transformed. Quality checks and evidence assessment determine which outputs are useful and which conclusions are supported. Workflow control connects these decisions to the next action.
 
-These choices require a model to combine the available material with explicit rules, quality criteria and the current workflow state. DataJevBench presents them as **500 tasks across six subsets**, covering decisions from data admission through output validation. Shared task inputs and scoring make performance comparable, while subset scores show how a model handles each kind of decision.
+These choices require a model to combine the available material with explicit rules, quality criteria and the current workflow state. The six subsets below cover decisions from data admission through output validation.
 
 ## What is measured?
 

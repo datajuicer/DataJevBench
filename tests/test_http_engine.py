@@ -55,7 +55,7 @@ class HTTPTest(unittest.TestCase):
             captured.append(json.loads(request.data))
             return Response(model_response("toy-v1"))
 
-        with patch("urllib.request.urlopen", side_effect=send):
+        with patch("urllib.request.OpenerDirector.open", side_effect=send):
             result = self.engine()(input_row("one"))
         self.assertEqual(set(captured[0]), {"model", "state", "questions"})
         self.assertEqual(list(captured[0]["questions"]["decision"]["criteria"]), ["A", "B"])
@@ -98,10 +98,65 @@ class HTTPTest(unittest.TestCase):
 
     def test_label_only_systemone_answer_remains_label_only(self):
         body = {"model": "toy-v1", "answers": {"decision": {"choice": "B"}}}
-        with patch("urllib.request.urlopen", return_value=Response(body)):
+        with patch("urllib.request.OpenerDirector.open", return_value=Response(body)):
             result = self.engine()(input_row("one"))
         self.assertEqual(result["answer"], "B")
         self.assertNotIn("probabilities", result)
+
+    def test_redirects_stop_without_forwarding_credentials_or_retrying(self):
+        received = []
+
+        class Handler(BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.rfile.read(int(self.headers.get("Content-Length", 0)))
+                self.do_GET()
+
+            def do_GET(self):
+                received.append((self.server.server_port, self.path,
+                                 self.headers.get("Authorization")))
+                if self.path == "/v1/systemone":
+                    self.send_response(self.server.redirect_code)
+                    self.send_header("Location", self.server.destination)
+                else:
+                    self.send_response(200)
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+
+            def log_message(self, *_):
+                pass
+
+        servers = []
+        try:
+            for _ in range(2):
+                server = HTTPServer(("127.0.0.1", 0), Handler)
+                worker = threading.Thread(target=server.serve_forever, daemon=True)
+                worker.start()
+                servers.append((server, worker))
+            origin, target = [server for server, _ in servers]
+            with patch.dict("os.environ", {"DATAJEV_TEST_KEY": "local-probe-secret",
+                                           "no_proxy": "*"}):
+                engine = SystemOneHTTP(
+                    endpoint=f"http://127.0.0.1:{origin.server_port}/v1/systemone",
+                    model_id="toy", key_env="DATAJEV_TEST_KEY", transport_retries=3,
+                    retry_delay_seconds=0, timeout_seconds=2)
+                for code in (301, 302, 303, 307, 308):
+                    for destination in (origin, target):
+                        with self.subTest(code=code, port=destination.server_port):
+                            received.clear()
+                            origin.redirect_code = code
+                            origin.destination = f"http://127.0.0.1:{destination.server_port}/capture"
+                            with self.assertRaisesRegex(CriticalInferenceError,
+                                                        "redirects are disabled") as caught:
+                                engine(input_row("one"))
+                            self.assertEqual(received, [(origin.server_port, "/v1/systemone",
+                                                         "Bearer local-probe-secret")])
+                            self.assertEqual(len(caught.exception.attempts), 1)
+                            self.assertEqual(caught.exception.attempts[0]["http_status"], code)
+        finally:
+            for server, worker in servers:
+                server.shutdown()
+                server.server_close()
+                worker.join(timeout=2)
 
     def test_identity_change_stops_run_and_resume(self):
         assets = {"inputs": [input_row("one"), input_row("two")],
@@ -109,13 +164,13 @@ class HTTPTest(unittest.TestCase):
         identity = {"engine": "datajevbench.engines:create_http"}
         with tempfile.TemporaryDirectory() as directory:
             directory = Path(directory)
-            with patch("urllib.request.urlopen", side_effect=[Response(model_response("toy-v1")),
+            with patch("urllib.request.OpenerDirector.open", side_effect=[Response(model_response("toy-v1")),
                                                              Response(model_response("toy-v2"))]):
                 with self.assertRaises(CriticalInferenceError):
                     run_evaluation(assets, directory / "run", self.engine(), identity)
             log = read_jsonl(directory / "run/results.jsonl")
             self.assertEqual([row["status"] for row in log], ["ok", "error"])
-            with patch("urllib.request.urlopen", return_value=Response(model_response("toy-v2"))):
+            with patch("urllib.request.OpenerDirector.open", return_value=Response(model_response("toy-v2"))):
                 with self.assertRaises(CriticalInferenceError):
                     run_evaluation(assets, directory / "run", self.engine(), identity, resume=True)
 
@@ -124,7 +179,7 @@ class HTTPTest(unittest.TestCase):
                                        "Unauthorized", {}, io.BytesIO(b"invalid key"))
         engine = self.engine()
         engine.transport_retries = 3
-        with patch("urllib.request.urlopen", side_effect=error) as send:
+        with patch("urllib.request.OpenerDirector.open", side_effect=error) as send:
             with self.assertRaises(CriticalInferenceError):
                 engine(input_row("one"))
         self.assertEqual(send.call_count, 1)
@@ -138,7 +193,7 @@ class HTTPTest(unittest.TestCase):
                     "engine_options": {"model_id": "toy", "expected_returned_models": ["toy-v1"]}}
         with tempfile.TemporaryDirectory() as directory:
             run_dir = Path(directory) / "run"
-            with patch("urllib.request.urlopen", return_value=Response(model_response("toy-v1"))):
+            with patch("urllib.request.OpenerDirector.open", return_value=Response(model_response("toy-v1"))):
                 run_evaluation(assets, run_dir, self.engine(), identity)
             self.assertEqual(score_run(assets, run_dir)["overall"]["accuracy"], 1.0)
             log_path = run_dir / "results.jsonl"
@@ -156,7 +211,7 @@ class HTTPTest(unittest.TestCase):
         second = model_response("toy-v1")
         second["evaluation_trace"]["inference"]["backend_kind"] = "replacement"
         engine = self.engine()
-        with patch("urllib.request.urlopen", side_effect=[Response(first), Response(second)]):
+        with patch("urllib.request.OpenerDirector.open", side_effect=[Response(first), Response(second)]):
             engine(input_row("one"))
             with self.assertRaises(CriticalInferenceError):
                 engine(input_row("two"))

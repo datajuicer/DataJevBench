@@ -25,6 +25,11 @@ CRITICAL_HTTP_CODES = {401, 402, 403, 404, 409, 422, 451}
 RETRY_HTTP_CODES = {408, 429, 500, 502, 503, 504}
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
 class TransportFailure(RuntimeError):
     def __init__(self, message: str, attempts: list[dict]):
         super().__init__(message)
@@ -109,6 +114,7 @@ class SystemOneHTTP:
         self.secret = os.environ.get(key_env, "") if key_env else ""
         if key_env and not self.secret:
             raise ValueError(f"Missing credential environment variable: {key_env}")
+        self._opener = urllib.request.build_opener(_NoRedirect())
         self.identity = None
 
     def bind_identity(self, identity: dict) -> None:
@@ -135,7 +141,7 @@ class SystemOneHTTP:
                 headers["Authorization"] = "Bearer " + self.secret
             wire_request = urllib.request.Request(self.endpoint, data=body, headers=headers)
             try:
-                with urllib.request.urlopen(wire_request, timeout=self.timeout_seconds) as response:
+                with self._opener.open(wire_request, timeout=self.timeout_seconds) as response:
                     raw = response.read()
                     status = response.status
                 decoded = json.loads(raw)
@@ -153,9 +159,14 @@ class SystemOneHTTP:
                 return result
             except urllib.error.HTTPError as exc:
                 code = exc.code
-                message = exc.read().decode(errors="replace")[:500]
                 attempts.append({"attempt": attempt, "http_status": code,
                                  "seconds": round(time.monotonic() - started, 6)})
+                if 300 <= code < 400:
+                    exc.close()
+                    raise CriticalInferenceError(
+                        f"HTTP {code}: redirects are disabled; configure the final endpoint URL", attempts
+                    ) from None
+                message = exc.read().decode(errors="replace")[:500]
                 if code in CRITICAL_HTTP_CODES:
                     raise CriticalInferenceError(f"HTTP {code}: {_clean(message, self.secret)}", attempts) from None
                 if code not in RETRY_HTTP_CODES or attempt == self.transport_retries:

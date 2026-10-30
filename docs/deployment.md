@@ -38,6 +38,8 @@ These objects illustrate the wire format, not a released task. Preserve the actu
 
 Copy [systemone.example.json](../configs/systemone.example.json) to `configs/systemone.local.json`. Replace the endpoint and requested `model_id`, and pin the actual response identifier with `expected_returned_models`. Use the same requested model ID in `--model-id`. If authentication is required, set the client's `key_env` to the name of an environment variable holding the service credential. Hosted-provider credentials belong in the model service.
 
+Configure the final endpoint URL: HTTP redirects are rejected without retrying to prevent forwarding credentials to another address.
+
 Copy [inference.example.json](../configs/inference.example.json) to `configs/inference.local.json` and replace its descriptions with the actual inference settings. Both local configuration files are Git-ignored.
 
 ```bash

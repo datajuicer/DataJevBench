@@ -1,0 +1,181 @@
+{
+  "schema": "datajevbench.release.v1",
+  "dataset": "Data-JevBench",
+  "version": "0.5",
+  "records": 500,
+  "by_subset": {
+    "D1": 90,
+    "D2": 90,
+    "D3": 80,
+    "D4": 100,
+    "D5": 80,
+    "D6": 60
+  },
+  "by_type": {
+    "choice": 480,
+    "score": 20
+  },
+  "by_instruction_language": {
+    "en": 300,
+    "zh": 200
+  },
+  "sources": [
+    {
+      "name": "CDRBench",
+      "count": 49,
+      "subsets": {
+        "D1": 26,
+        "D2": 3,
+        "D3": 20
+      },
+      "urls": [
+        "https://arxiv.org/abs/2606.31435"
+      ],
+      "licenses": [
+        "CC-BY-4.0 upstream materials; preserve attribution and underlying source rights",
+        "Academic noncommercial use under source-specific authorization"
+      ]
+    },
+    {
+      "name": "Data-Juicer",
+      "count": 87,
+      "subsets": {
+        "D2": 87
+      },
+      "urls": [
+        "https://github.com/datajuicer/data-juicer"
+      ],
+      "licenses": [
+        "Apache-2.0 documentation; newly authored task data",
+        "Apache-2.0 operator code; authored fixtures",
+        "Apache-2.0 operator code; authored scenario",
+        "Apache-2.0 operator docs; authored task inputs"
+      ]
+    },
+    {
+      "name": "FinQA",
+      "count": 49,
+      "subsets": {
+        "D1": 9,
+        "D4": 20,
+        "D5": 20
+      },
+      "urls": [
+        "https://github.com/czyssrs/FinQA"
+      ],
+      "licenses": [
+        "MIT repository; underlying annual reports retain attribution"
+      ]
+    },
+    {
+      "name": "QASPER",
+      "count": 12,
+      "subsets": {
+        "D4": 12
+      },
+      "urls": [
+        "https://allenai.org/data/qasper"
+      ],
+      "licenses": [
+        "CC-BY-4.0 dataset; original paper rights retained"
+      ]
+    },
+    {
+      "name": "SFHOT/SFRES",
+      "count": 30,
+      "subsets": {
+        "D3": 30
+      },
+      "urls": [
+        "https://github.com/jeknov/EMNLP_17_submission"
+      ],
+      "licenses": [
+        "MIT repository annotations; source text retains original attribution"
+      ]
+    },
+    {
+      "name": "SummEval",
+      "count": 30,
+      "subsets": {
+        "D3": 30
+      },
+      "urls": [
+        "https://github.com/Yale-LILY/SummEval"
+      ],
+      "licenses": [
+        "MIT repository annotations; source text retains original attribution"
+      ]
+    },
+    {
+      "name": "Data workflow scenarios",
+      "count": 243,
+      "subsets": {
+        "D1": 55,
+        "D4": 68,
+        "D5": 60,
+        "D6": 60
+      },
+      "urls": [
+        "https://github.com/czyssrs/FinQA"
+      ],
+      "licenses": [
+        "Authored benchmark tasks; source-specific authorization and attribution apply"
+      ]
+    }
+  ],
+  "status": "public_data_included",
+  "files": {
+    "data-jevbench-v0.5.jsonl": {
+      "sha256": "c70fdb38df9fd5329ddb226942823977cd477241678f6bb58093efe827bf3588",
+      "bytes": 4680691
+    },
+    "inputs.jsonl": {
+      "sha256": "5360d9f2992558fb30729c81ecbeb9e4f55bc1b0b21b3787ad96ae98631b4c0f",
+      "bytes": 4473173
+    },
+    "contract.py": {
+      "sha256": "4286dd5aae0c01949b2dc75052733cf5ee0bb70c5df4142be2817fc5f8070181",
+      "bytes": 4260
+    }
+  },
+  "scoring_policy": {
+    "probability_sum_abs_tol": 0.001,
+    "probability_sum_rel_tol": 0,
+    "scorer_module": "datajevbench/contract_v05.py",
+    "renormalize_probabilities": false
+  },
+  "source_files": {
+    "data-jevbench-v0.5.jsonl": {
+      "sha256": "ef027c37a60cfc556621ee4389389d85cd04a37b548d15d6ac9933d583a44905",
+      "bytes": 5700383
+    },
+    "inputs.jsonl": {
+      "sha256": "ab05b81decf92417a6778898408662979ff6406bd00909577ed4be6f781c09b1",
+      "bytes": 4529529
+    },
+    "contract.py": {
+      "sha256": "4286dd5aae0c01949b2dc75052733cf5ee0bb70c5df4142be2817fc5f8070181",
+      "bytes": 4260
+    }
+  },
+  "publication": {
+    "format": "datajevbench.public.v1",
+    "id_scheme": "D{subset}-sha256(schema,subset,state,question,ordered-labels)[:16]",
+    "group_scheme": "G-sha256(schema,original-group)[:16]",
+    "id_hash_uses_reference_answers": false,
+    "provenance_fields": [
+      "subset",
+      "source",
+      "source_url",
+      "license",
+      "source_sha256",
+      "operator_document_sha256",
+      "reference_type",
+      "language.task_language",
+      "reference_caveats (when present)"
+    ],
+    "semantic_sha256": "c72c7e2ade805b871dd40bdf947a32a2d7edecd05c5f1c69444f08064cfbc7c2",
+    "model_wire_sha256": "6af4d37f1ee82d53041510302830d38b5dd0db7b2e2209d85d69a7ca0536f49a",
+    "historical_snapshot_identity": "source_files"
+  }
+}

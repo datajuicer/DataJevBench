@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datajevbench-leaderboard"
+version = "0.5"
+description = "DataJevBench v0.5 evaluation of decisions in data workflows"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+datajevbench = "datajevbench.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["datajevbench*"]

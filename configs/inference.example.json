@@ -1,0 +1,9 @@
+{
+  "inference_method": "Describe the model-owned prompt, readout and decoding method",
+  "input_format": "SystemOne state and questions with original candidate order",
+  "hardware": "Record the serving device or hosted provider",
+  "retry_policy": "One client transport retry; --resume retries failed tasks",
+  "context_limit": "Record the model context limit",
+  "thinking_controls": "Record enabled controls or state not applicable",
+  "dependency_revisions": "Record model runtime and dependency revisions"
+}

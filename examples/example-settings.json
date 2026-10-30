@@ -1,0 +1,7 @@
+{
+  "purpose": "adapter interface example",
+  "inference_method": "return the first listed label",
+  "input_format": "native Python request dictionary",
+  "hardware": "CPU example",
+  "retry_policy": "runner --resume for errors"
+}

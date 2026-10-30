@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc" font-family="DejaVu Sans,Arial,sans-serif">
+<title id="title">DataJevBench: six kinds of data decisions</title>
+<desc id="desc">D1 Data filtering 90 tasks; D2 Processing plans 90 tasks; D3 Output quality 80 tasks; D4 Information sufficiency 100 tasks; D5 Evidence &amp; privacy 80 tasks; D6 Workflow control 60 tasks. Illustrative data workflow decisions.</desc>
+<defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".8" fill="#dce2ee" opacity=".55"/></pattern></defs>
+<rect width="1600" height="1120" fill="#ffffff"/>
+<rect x="600" y="24" width="400" height="1072" rx="23" fill="#ffffff"/>
+<g transform="translate(24 24)">
+<rect x="0" y="0" width="552" height="340" rx="18" fill="#ffffff" stroke="#dce2ec" stroke-width="2.5" />
+<rect x="0" y="14" width="5" height="312" rx="2.5" fill="#5081c9"/>
+<text x="28" y="51" font-size="26" fill="#5081c9" font-weight="600" text-anchor="start">D1</text>
+<text x="76" y="51" font-size="26" fill="#334155" font-weight="500" text-anchor="start">Data filtering</text>
+<text x="524" y="51" font-size="23" fill="#7a828c" font-weight="500" text-anchor="end">90 · 18%</text>
+<g transform="translate(24 84)">
+<rect x="0" y="0" width="504" height="188" rx="13" fill="#f7f7fc" stroke="#e9edf3" stroke-width="2.5" />
+<rect width="504" height="188" rx="13" fill="url(#dots)"/>
+<path d="M 113 90 H 206 M 278 90 H 312 V 46 H 350" fill="none" stroke="#5081c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path d="M 312 90 V 137 H 350" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><g transform="rotate(-9 75 81)"><rect x="36" y="33" width="62" height="86" rx="9" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><path d="M 50 57 H 84 M 50 69 H 78 M 50 81 H 84" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></g><rect x="46" y="39" width="62" height="86" rx="9" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><path d="M 60 63 H 94 M 60 75 H 88 M 60 87 H 94" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><rect x="58" y="47" width="62" height="86" rx="9" fill="#ffffff" stroke="#5081c9" stroke-width="2.5" /><path d="M 72 71 H 106 M 72 83 H 100 M 72 95 H 106" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><circle cx="242" cy="90" r="36" fill="#ffffff" stroke="#5081c9" stroke-width="2.5"/><path d="M 223 76 H 261 L 248 93 V 108 L 237 114 V 93 Z" fill="none" stroke="#5081c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="312" cy="46" r="4" fill="#5081c9" stroke="#ffffff" stroke-width="2"/><rect x="350" y="22" width="118" height="48" rx="11" fill="#ffffff" stroke="#5081c9" stroke-width="2.5" /><text x="409.0" y="53" font-size="24" fill="#5081c9" font-weight="500" text-anchor="middle">Keep</text><rect x="350" y="113" width="118" height="48" rx="11" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><text x="409.0" y="144" font-size="24" fill="#7a828c" font-weight="500" text-anchor="middle">Drop</text><text x="90" y="169" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Records</text><text x="242" y="169" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Assess</text>
+</g>
+<text x="28" y="313" font-size="24" fill="#7a828c" font-weight="400" text-anchor="start">Apply filtering rules in order.</text>
+</g>
+<g transform="translate(24 388)">
+<rect x="0" y="0" width="552" height="340" rx="18" fill="#ffffff" stroke="#dce2ec" stroke-width="2.5" />
+<rect x="0" y="14" width="5" height="312" rx="2.5" fill="#8a74c6"/>
+<text x="28" y="51" font-size="26" fill="#8a74c6" font-weight="600" text-anchor="start">D2</text>
+<text x="76" y="51" font-size="26" fill="#334155" font-weight="500" text-anchor="start">Processing plans</text>
+<text x="524" y="51" font-size="23" fill="#7a828c" font-weight="500" text-anchor="end">90 · 18%</text>
+<g transform="translate(24 84)">
+<rect x="0" y="0" width="504" height="188" rx="13" fill="#f7f7fc" stroke="#e9edf3" stroke-width="2.5" />
+<rect width="504" height="188" rx="13" fill="url(#dots)"/>
+<path d="M 99 92 H 135 V 48 H 174" fill="none" stroke="#8a74c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path d="M 135 92 V 138 H 174" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><rect x="34" y="49" width="62" height="86" rx="9" fill="#ffffff" stroke="#8a74c6" stroke-width="2.5" /><path d="M 48 73 H 82 M 48 85 H 76 M 48 97 H 82" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><text x="65" y="110" font-size="22" fill="#8a74c6" font-weight="500" text-anchor="middle">&lt;/&gt;</text><rect x="174" y="22" width="225" height="53" rx="11" fill="#ffffff" stroke="#8a74c6" stroke-width="2.5" /><text x="286" y="56" font-size="24" fill="#8a74c6" font-weight="500" text-anchor="middle">Clean → Split</text><rect x="174" y="112" width="225" height="53" rx="11" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><text x="286" y="146" font-size="24" fill="#7a828c" font-weight="400" text-anchor="middle">Split → Clean</text><path d="M 399 48 H 431" fill="none" stroke="#8a74c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="452" cy="48" r="21" fill="#ffffff" stroke="#8a74c6" stroke-width="2.5"/><g transform="translate(452 48) scale(1)"><path d="M -10 0 L -3 7 L 12 -9" fill="none" stroke="#8a74c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><path d="M 399 138 H 431" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="452" cy="138" r="21" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5"/><path d="M 445 131 L 459 145 M 459 131 L 445 145" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><text x="66" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Input</text>
+</g>
+<text x="28" y="313" font-size="24" fill="#7a828c" font-weight="400" text-anchor="start">Choose a feasible operator sequence.</text>
+</g>
+<g transform="translate(24 752)">
+<rect x="0" y="0" width="552" height="340" rx="18" fill="#ffffff" stroke="#dce2ec" stroke-width="2.5" />
+<rect x="0" y="14" width="5" height="312" rx="2.5" fill="#49a098"/>
+<text x="28" y="51" font-size="26" fill="#49a098" font-weight="600" text-anchor="start">D3</text>
+<text x="76" y="51" font-size="26" fill="#334155" font-weight="500" text-anchor="start">Output quality</text>
+<text x="524" y="51" font-size="23" fill="#7a828c" font-weight="500" text-anchor="end">80 · 16%</text>
+<g transform="translate(24 84)">
+<rect x="0" y="0" width="504" height="188" rx="13" fill="#f7f7fc" stroke="#e9edf3" stroke-width="2.5" />
+<rect width="504" height="188" rx="13" fill="url(#dots)"/>
+<path d="M 110 90 H 150 V 55 H 193" fill="none" stroke="#49a098" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path d="M 150 90 V 128 H 337" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><rect x="43" y="42" width="67" height="96" rx="9" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><path d="M 57 66 H 96 M 57 78 H 90 M 57 90 H 96" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><text x="76" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Source</text><rect x="193" y="22" width="103" height="126" rx="12" fill="#ffffff" stroke="#49a098" stroke-width="2.5" /><text x="211" y="51" font-size="22" fill="#49a098" font-weight="600" text-anchor="start">A</text><path d="M 211 70 H 278 M 211 83 H 270 M 211 96 H 277 M 211 109 H 257" fill="none" stroke="#49a098" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><circle cx="279" cy="25" r="17" fill="#ffffff" stroke="#49a098" stroke-width="2.5"/><g transform="translate(279 25) scale(0.75)"><path d="M -10 0 L -3 7 L 12 -9" fill="none" stroke="#49a098" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><rect x="337" y="50" width="103" height="98" rx="12" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><text x="355" y="79" font-size="22" fill="#7a828c" font-weight="600" text-anchor="start">B</text><path d="M 355 98 H 422 M 355 111 H 414 M 355 124 H 399" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><text x="317" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Compare outputs</text>
+</g>
+<text x="28" y="313" font-size="24" fill="#7a828c" font-weight="400" text-anchor="start">Judge fidelity against a human rubric.</text>
+</g>
+<g transform="translate(1024 24)">
+<rect x="0" y="0" width="552" height="340" rx="18" fill="#ffffff" stroke="#dce2ec" stroke-width="2.5" />
+<rect x="0" y="14" width="5" height="312" rx="2.5" fill="#c99143"/>
+<text x="28" y="51" font-size="26" fill="#c99143" font-weight="600" text-anchor="start">D4</text>
+<text x="76" y="51" font-size="26" fill="#334155" font-weight="500" text-anchor="start">Information sufficiency</text>
+<text x="524" y="51" font-size="23" fill="#7a828c" font-weight="500" text-anchor="end">100 · 20%</text>
+<g transform="translate(24 84)">
+<rect x="0" y="0" width="504" height="188" rx="13" fill="#f7f7fc" stroke="#e9edf3" stroke-width="2.5" />
+<rect width="504" height="188" rx="13" fill="url(#dots)"/>
+<rect x="32" y="25" width="239" height="129" rx="11" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><path d="M 32 68 H 271 M 32 111 H 271 M 194 25 V 154" fill="none" stroke="#cfd7e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><text x="49" y="54" font-size="23" fill="#7a828c" font-weight="400" text-anchor="start">Revenue</text><text x="232" y="54" font-size="23" fill="#334155" font-weight="400" text-anchor="middle">120</text><text x="49" y="97" font-size="23" fill="#7a828c" font-weight="400" text-anchor="start">Costs</text><text x="232" y="97" font-size="23" fill="#334155" font-weight="400" text-anchor="middle">80</text><text x="49" y="140" font-size="23" fill="#7a828c" font-weight="400" text-anchor="start">Tax</text><rect x="207" y="119" width="49" height="28" rx="5" fill="#f2f1fa" stroke="#c99143" stroke-width="2.5" stroke-dasharray="4 4"/><text x="232" y="141" font-size="24" fill="#c99143" font-weight="500" text-anchor="middle">?</text><path d="M 274 90 H 342" fill="none" stroke="#c99143" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 7"/><circle cx="386" cy="90" r="39" fill="#ffffff" stroke="#c99143" stroke-width="2.5"/><text x="386" y="105" font-size="45" fill="#c99143" font-weight="400" text-anchor="middle">?</text><text x="386" y="170" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Enough?</text>
+</g>
+<text x="28" y="313" font-size="24" fill="#7a828c" font-weight="400" text-anchor="start">Can the answer be determined?</text>
+</g>
+<g transform="translate(1024 388)">
+<rect x="0" y="0" width="552" height="340" rx="18" fill="#ffffff" stroke="#dce2ec" stroke-width="2.5" />
+<rect x="0" y="14" width="5" height="312" rx="2.5" fill="#c6778c"/>
+<text x="28" y="51" font-size="26" fill="#c6778c" font-weight="600" text-anchor="start">D5</text>
+<text x="76" y="51" font-size="26" fill="#334155" font-weight="500" text-anchor="start">Evidence &amp; privacy</text>
+<text x="524" y="51" font-size="23" fill="#7a828c" font-weight="500" text-anchor="end">80 · 16%</text>
+<g transform="translate(24 84)">
+<rect x="0" y="0" width="504" height="188" rx="13" fill="#f7f7fc" stroke="#e9edf3" stroke-width="2.5" />
+<rect width="504" height="188" rx="13" fill="url(#dots)"/>
+<path d="M 124 84 H 205 M 284 84 H 352" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><rect x="54" y="30" width="70" height="111" rx="9" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><path d="M 68 54 H 110 M 68 66 H 104 M 68 78 H 110" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><rect x="69" y="91" width="41" height="10" rx="3" fill="#9ba7b7" stroke="none" stroke-width="2.5" /><rect x="69" y="109" width="29" height="8" rx="2" fill="#cbd3df" stroke="none" stroke-width="2.5" /><circle cx="242" cy="77" r="30" fill="#ffffff" stroke="#c6778c" stroke-width="2.5"/><path d="M 263 99 L 284 120" fill="none" stroke="#c6778c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(242 77) scale(1.1)"><path d="M -10 0 L -3 7 L 12 -9" fill="none" stroke="#c6778c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><path d="M 388 38 L 422 51 V 83 C 422 106 408 121 388 132 C 368 121 354 106 354 83 V 51 Z" fill="#ffffff" stroke="#c6778c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><rect x="373" y="78" width="30" height="25" rx="5" fill="#ffffff" stroke="#c6778c" stroke-width="2.5" /><path d="M 379 78 V 69 A 9 9 0 0 1 397 69 V 78" fill="none" stroke="#c6778c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><circle cx="388" cy="90" r="2.5" fill="#c6778c" stroke="#c6778c" stroke-width="1"/><text x="89" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Claim</text><text x="245" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Verify</text><text x="388" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Protect</text>
+</g>
+<text x="28" y="313" font-size="24" fill="#7a828c" font-weight="400" text-anchor="start">Check claims and privacy constraints.</text>
+</g>
+<g transform="translate(1024 752)">
+<rect x="0" y="0" width="552" height="340" rx="18" fill="#ffffff" stroke="#dce2ec" stroke-width="2.5" />
+<rect x="0" y="14" width="5" height="312" rx="2.5" fill="#79a15c"/>
+<text x="28" y="51" font-size="26" fill="#79a15c" font-weight="600" text-anchor="start">D6</text>
+<text x="76" y="51" font-size="26" fill="#334155" font-weight="500" text-anchor="start">Workflow control</text>
+<text x="524" y="51" font-size="23" fill="#7a828c" font-weight="500" text-anchor="end">60 · 12%</text>
+<g transform="translate(24 84)">
+<rect x="0" y="0" width="504" height="188" rx="13" fill="#f7f7fc" stroke="#e9edf3" stroke-width="2.5" />
+<rect width="504" height="188" rx="13" fill="url(#dots)"/>
+<path d="M 128 90 H 210 M 280 90 H 342" fill="none" stroke="#79a15c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><g opacity=".65"><rect x="30" y="24" width="64" height="82" rx="9" fill="#f3f5f9" stroke="#cfd7e5" stroke-width="2.5" /><text x="61" y="48" font-size="21" fill="#7a828c" font-weight="400" text-anchor="middle">v1</text><g transform="translate(61 78) scale(0.8)"><path d="M -10 0 L -3 7 L 12 -9" fill="none" stroke="#cfd7e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g></g><rect x="62" y="52" width="66" height="89" rx="9" fill="#ffffff" stroke="#79a15c" stroke-width="2.5" /><text x="95" y="89" font-size="26" fill="#79a15c" font-weight="600" text-anchor="middle">v2</text><path d="M 77 108 H 113 M 77 119 H 101" fill="none" stroke="#cfd7e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /><circle cx="245" cy="90" r="36" fill="#ffffff" stroke="#79a15c" stroke-width="2.5"/><g transform="translate(245 90) scale(1.35)"><path d="M -10 0 L -3 7 L 12 -9" fill="none" stroke="#79a15c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></g><rect x="342" y="66" width="132" height="48" rx="11" fill="#ffffff" stroke="#cfd7e5" stroke-width="2.5" /><text x="408.0" y="97" font-size="24" fill="#7a828c" font-weight="500" text-anchor="middle">Commit</text><text x="95" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Current</text><text x="245" y="174" font-size="23" fill="#7a828c" font-weight="400" text-anchor="middle">Validate</text>
+</g>
+<text x="28" y="313" font-size="24" fill="#7a828c" font-weight="400" text-anchor="start">Validate the current file before commit.</text>
+</g>
+<g transform="translate(0 68)">
+<path d="M 801.520 296.009 A 134 134 0 0 1 920.592 371.574" fill="none" stroke="#5081c9" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" style="stroke-linecap:butt"/>
+<path d="M 921.886 374.325 A 134 134 0 0 1 904.211 514.238" fill="none" stroke="#8a74c6" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" style="stroke-linecap:butt"/>
+<path d="M 902.273 516.581 A 134 134 0 0 1 784.715 563.125" fill="none" stroke="#49a098" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" style="stroke-linecap:butt"/>
+<path d="M 781.698 562.744 A 134 134 0 0 1 668.667 456.601" fill="none" stroke="#c99143" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" style="stroke-linecap:butt"/>
+<path d="M 668.097 453.614 A 134 134 0 0 1 707.168 333.365" fill="none" stroke="#c6778c" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" style="stroke-linecap:butt"/>
+<path d="M 709.385 331.284 A 134 134 0 0 1 798.480 296.009" fill="none" stroke="#79a15c" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" style="stroke-linecap:butt"/>
+<text x="800" y="442" font-size="76" fill="#334155" font-weight="500" text-anchor="middle">500</text>
+<text x="800" y="479" font-size="25" fill="#7a828c" font-weight="400" text-anchor="middle">decisions</text>
+<text x="800" y="639" font-size="24" fill="#7a828c" font-weight="400" text-anchor="middle">480 Choice · 20 Score</text>
+<text x="800" y="685" font-size="24" fill="#7a828c" font-weight="400" text-anchor="middle">EN 60% · ZH 40%</text>
+</g></svg>

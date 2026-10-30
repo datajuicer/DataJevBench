@@ -1,0 +1,1386 @@
+{
+  "schema": "datajevbench.board.v1",
+  "release": "0.5",
+  "evaluated_at": "2026-10-28",
+  "metric": "micro_accuracy",
+  "dataset_sha256": "ef027c37a60cfc556621ee4389389d85cd04a37b548d15d6ac9933d583a44905",
+  "inputs_sha256": "ab05b81decf92417a6778898408662979ff6406bd00909577ed4be6f781c09b1",
+  "scorer_sha256": "4286dd5aae0c01949b2dc75052733cf5ee0bb70c5df4142be2817fc5f8070181",
+  "probability_sum_abs_tol": 0.001,
+  "entries": [
+    {
+      "id": "20261028-vllm-sr-d3-ultra",
+      "model": "vLLM-SR d3-ultra",
+      "model_id": "vllm-sr/d3-ultra",
+      "model_revision": "52ba9e7a00402f9560c7fba8c039608e7ddee7fb",
+      "evaluated_at": "2026-10-28",
+      "backend": "D3 native engine",
+      "inference_note": "Restricted answer-code probabilities; prefix bidirectional attention; native question-count calibration.",
+      "settings": {
+        "kind": "d3-code-readout",
+        "runtime": "d3-runtime/1",
+        "format_id": "d3-code-readout-v1",
+        "attention_mode": "prefix_bidir",
+        "pooling": "last",
+        "temperature": 1.0,
+        "max_length": 131072,
+        "readout_dtype": "float32",
+        "backbone_dtype": "bfloat16",
+        "attn_implementation": "sdpa",
+        "batch_size": 8,
+        "temperature_by_questions": {
+          "max_questions": [
+            1,
+            4,
+            16
+          ],
+          "temperature": [
+            1.046,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 417,
+        "accuracy": 0.834,
+        "probabilistic": 500,
+        "ece": 0.0668918730781073,
+        "brier": 0.24050848619146614
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 79,
+          "accuracy": 0.8777777777777778,
+          "probabilistic": 90,
+          "ece": 0.05806109880951593,
+          "brier": 0.17681102381134328
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 70,
+          "accuracy": 0.7777777777777778,
+          "probabilistic": 90,
+          "ece": 0.1308523886954031,
+          "brier": 0.33624322562319997
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.07019850703635742,
+          "brier": 0.2763937100906554
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 75,
+          "accuracy": 0.75,
+          "probabilistic": 100,
+          "ece": 0.16624465298766772,
+          "brier": 0.391635798423135
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 73,
+          "accuracy": 0.9125,
+          "probabilistic": 80,
+          "ece": 0.05636037314418389,
+          "brier": 0.10275065223945005
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 56,
+          "accuracy": 0.9333333333333333,
+          "probabilistic": 60,
+          "ece": 0.0439196998699527,
+          "brier": 0.07640386363170273
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "b36df505bb3af9352d98258749f5ad360dc5484c91e96d8e3062cfa4c88c3dd2",
+        "predictions_sha256": "3920b9590c7831c535714c8a8c8f6230c8e73b23d488381f16fb884ad50e1a27",
+        "source_scores_sha256": "844281d06da081afc6c73f7f3950ff22c23591a6a6cbaea52d2e7af52cf5d25e"
+      }
+    },
+    {
+      "id": "20261028-autotrust-autotrust-jev-27b-v1-1",
+      "model": "AutoTrust-JEV-27B v1.1",
+      "model_id": "autotrust/AutoTrust-JEV-27B-v1.1",
+      "model_revision": "ae156900e9f338e423042b89e25d0fd8093064d4",
+      "evaluated_at": "2026-10-28",
+      "backend": "vLLM + D3 score adapter",
+      "inference_note": "Native choice readout; ordinal scores use a model-side adapter based on upstream D3.",
+      "settings": {
+        "readout": "lm_head rows at readout_token_ids = decision readout weight (bf16); other rows zero",
+        "max_len": 65536,
+        "prefix_caching": false,
+        "chunked_prefill": false,
+        "prefix_bidirectional": true
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 412,
+        "accuracy": 0.824,
+        "probabilistic": 500,
+        "ece": 0.046512790779167416,
+        "brier": 0.23413539834629354
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 75,
+          "accuracy": 0.8333333333333334,
+          "probabilistic": 90,
+          "ece": 0.06285142504009807,
+          "brier": 0.207519888559376
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 73,
+          "accuracy": 0.8111111111111111,
+          "probabilistic": 90,
+          "ece": 0.09819578244247672,
+          "brier": 0.29756432638193014
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.8125,
+          "probabilistic": 80,
+          "ece": 0.09161540797254489,
+          "brier": 0.23695935388102138
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 74,
+          "accuracy": 0.74,
+          "probabilistic": 100,
+          "ece": 0.08941050608007978,
+          "brier": 0.34297959043017323
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 69,
+          "accuracy": 0.8625,
+          "probabilistic": 80,
+          "ece": 0.07293361648234523,
+          "brier": 0.1583884543861767
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 56,
+          "accuracy": 0.9333333333333333,
+          "probabilistic": 60,
+          "ece": 0.07628038340813102,
+          "brier": 0.09473893540060178
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "10a53e8e8c48a421c7f622ec02a84782e53fbf37a2dde52aa055a49aa0011383",
+        "predictions_sha256": "9c0582dc9b016dc24fd7e13cdbe8cf94875613c58e31dc5ce95201c02210017b",
+        "source_scores_sha256": "47d9d268b7313d4006164e62a7b4c1ae6082bd89362457bb24e11ca2286b7f34"
+      }
+    },
+    {
+      "id": "20261028-fastino-glide",
+      "model": "GLiDE",
+      "model_id": "fastino/GLiDE",
+      "model_revision": "d199b6d7e04523d87986b8b68cd62272ed1cefc0",
+      "evaluated_at": "2026-10-28",
+      "backend": "GLiDE native engine",
+      "inference_note": "Noncausal full attention; glide-v1 prompt; temperature 1.",
+      "settings": {
+        "max_len": 40000,
+        "token_budget": 16384,
+        "attention_mode": "noncausal_full_attention",
+        "temperature": 1.0,
+        "prompt_format": "glide-v1"
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 412,
+        "accuracy": 0.824,
+        "probabilistic": 500,
+        "ece": 0.03087620949945399,
+        "brier": 0.24036720380608922
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 76,
+          "accuracy": 0.8444444444444444,
+          "probabilistic": 90,
+          "ece": 0.043187042673592156,
+          "brier": 0.1992597167101881
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 72,
+          "accuracy": 0.8,
+          "probabilistic": 90,
+          "ece": 0.11223170755242975,
+          "brier": 0.2939417487539083
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 68,
+          "accuracy": 0.85,
+          "probabilistic": 80,
+          "ece": 0.05274687130166398,
+          "brier": 0.20900751793446912
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 69,
+          "accuracy": 0.69,
+          "probabilistic": 100,
+          "ece": 0.16399916796384986,
+          "brier": 0.39981220315627347
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 72,
+          "accuracy": 0.9,
+          "probabilistic": 80,
+          "ece": 0.0729101614410919,
+          "brier": 0.11057160678614608
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 55,
+          "accuracy": 0.9166666666666666,
+          "probabilistic": 60,
+          "ece": 0.11314442845435604,
+          "brier": 0.17079866196665508
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "cbc8188096ff5ea6a385a5f21c0aba1a7d91057a863799eea3f43985e84bf0ae",
+        "predictions_sha256": "3554f8361f1d721577a60e7385eeb8ea8eba5cd006545bbfbda4eb5c15a1b5db",
+        "source_scores_sha256": "367277162c54a1035a33214a5e83e896a8bc68291f891daa5d2ee7657f724293"
+      }
+    },
+    {
+      "id": "20261028-vllm-sr-d3",
+      "model": "vLLM-SR d3 (27B)",
+      "model_id": "vllm-sr/d3",
+      "model_revision": "cf15549a78fc52598ddd1951f321c58372bbd64f",
+      "evaluated_at": "2026-10-28",
+      "backend": "D3.system_one",
+      "inference_note": "Native checkpoint calibration; configured context length 65,536.",
+      "settings": {
+        "max_length_configured": 65536,
+        "batch_size": 8,
+        "calibration": "native checkpoint default"
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 408,
+        "accuracy": 0.816,
+        "probabilistic": 500,
+        "ece": 0.031101230505496416,
+        "brier": 0.24769693303591694
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 75,
+          "accuracy": 0.8333333333333334,
+          "probabilistic": 90,
+          "ece": 0.06284144932680111,
+          "brier": 0.19948207462329348
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 68,
+          "accuracy": 0.7555555555555555,
+          "probabilistic": 90,
+          "ece": 0.07991305425115441,
+          "brier": 0.328078214639619
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 67,
+          "accuracy": 0.8375,
+          "probabilistic": 80,
+          "ece": 0.10157795720944522,
+          "brier": 0.23415818113494918
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 75,
+          "accuracy": 0.75,
+          "probabilistic": 100,
+          "ece": 0.07148855224394872,
+          "brier": 0.3210760219132978
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 71,
+          "accuracy": 0.8875,
+          "probabilistic": 80,
+          "ece": 0.06562239122161118,
+          "brier": 0.1366212593359835
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 52,
+          "accuracy": 0.8666666666666667,
+          "probabilistic": 60,
+          "ece": 0.10650454343737317,
+          "brier": 0.2433013842548643
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "b5d1328225b89d1986c02adce12dd552b0b3188dd5c02ff1fdb2ad4b68888455",
+        "predictions_sha256": "3d3b127488bc6786c93264ac48767cae21fd99e9aa40d83ab8ff496ecbe8141e",
+        "source_scores_sha256": "2f6c62515537dd1a62ca6fdf69b1e15cf67d8280812518e1cb44ed6bc2187188"
+      }
+    },
+    {
+      "id": "20261028-baselabs-mammoth-1",
+      "model": "Mammoth-1",
+      "model_id": "baselabs/mammoth-1",
+      "model_revision": "61cec44c281c693992e3d6ebeb44dd3402dfa186",
+      "evaluated_at": "2026-10-28",
+      "backend": "Mammoth native engine",
+      "inference_note": "Noncausal attention; batched forks; slot_lm readout.",
+      "settings": {
+        "kind": "full fine-tune",
+        "runtime": "OneJev qev @81ce62f + serve.patch",
+        "fork_mode": "batched",
+        "attention": "noncausal",
+        "readout": "slot_lm",
+        "calibration": "none",
+        "max_branch_tokens": 32768,
+        "max_request_tokens": 65536
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 403,
+        "accuracy": 0.806,
+        "probabilistic": 500,
+        "ece": 0.04825560000000002,
+        "brier": 0.27441493183336807
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 78,
+          "accuracy": 0.8666666666666667,
+          "probabilistic": 90,
+          "ece": 0.03629001111111114,
+          "brier": 0.18591409536104442
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 70,
+          "accuracy": 0.7777777777777778,
+          "probabilistic": 90,
+          "ece": 0.07326172222222217,
+          "brier": 0.30046843777379995
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 69,
+          "accuracy": 0.8625,
+          "probabilistic": 80,
+          "ece": 0.11095651249999998,
+          "brier": 0.22678633727506262
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 67,
+          "accuracy": 0.67,
+          "probabilistic": 100,
+          "ece": 0.19264947000000007,
+          "brier": 0.46044680022558004
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 75,
+          "accuracy": 0.9375,
+          "probabilistic": 80,
+          "ece": 0.03799318750000005,
+          "brier": 0.08921730771058747
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 44,
+          "accuracy": 0.7333333333333333,
+          "probabilistic": 60,
+          "ece": 0.17713028333333328,
+          "brier": 0.368467771885633
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "b96c6428ee400b8a0f68d7663baf8967a82a79acaa6cd1adaa240ca5f2b59cdc",
+        "predictions_sha256": "e455ca36a23bf3cc3d2f0016ed2ecde8657b5603026fb4eb843e2de53da270c9",
+        "source_scores_sha256": "cc51ef710bb3b3df82997ada4358630bcc901fa8337bcdda533183c3173419df"
+      }
+    },
+    {
+      "id": "20261028-perplexity-ai-pplx-decider-v1-2",
+      "model": "Perplexity Decider v1.2 (27B)",
+      "model_id": "perplexity-ai/pplx-decider-v1.2",
+      "model_revision": "cce0f3f80033e9d89d80831d5281fd72124aacce",
+      "evaluated_at": "2026-10-28",
+      "backend": "Decider.decide",
+      "inference_note": "Reference implementation with fast=False and native checkpoint calibration.",
+      "settings": {
+        "max_length_configured": 65536,
+        "batch_size": "reference padded, cpu_threads=4",
+        "calibration": "native checkpoint default"
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 401,
+        "accuracy": 0.802,
+        "probabilistic": 500,
+        "ece": 0.04305477673362742,
+        "brier": 0.27832745141861226
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 74,
+          "accuracy": 0.8222222222222222,
+          "probabilistic": 90,
+          "ece": 0.06625335391183519,
+          "brier": 0.21266710941037317
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.7222222222222222,
+          "probabilistic": 90,
+          "ece": 0.0863530864348718,
+          "brier": 0.38574719816151215
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 66,
+          "accuracy": 0.825,
+          "probabilistic": 80,
+          "ece": 0.11893624550762558,
+          "brier": 0.2528408354757054
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 74,
+          "accuracy": 0.74,
+          "probabilistic": 100,
+          "ece": 0.11942191347885787,
+          "brier": 0.36395117057715204
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 69,
+          "accuracy": 0.8625,
+          "probabilistic": 80,
+          "ece": 0.059081281173642905,
+          "brier": 0.15849180699303175
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 53,
+          "accuracy": 0.8833333333333333,
+          "probabilistic": 60,
+          "ece": 0.18995099151821423,
+          "brier": 0.26674515954370587
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "fa1882b25099b2d58b50f56012cbf5b2897c1150f5e2dc992f1efcb2d317018d",
+        "predictions_sha256": "a1ae32f441e716cf8976cbe75a2ff4eef549f49ed4efd51f63ecd9378da75e15",
+        "source_scores_sha256": "7cd223850387aa4858580484dae24fdfc4a4f52d8ce3531f8a0531282b420445"
+      }
+    },
+    {
+      "id": "20261028-startlux-decision-v1-1-27b-instant",
+      "model": "StartLux Decision v1.1 27B Instant",
+      "model_id": "StartLux-Decision-v1.1-27B-Instant",
+      "model_revision": "32e7d35d74db615c4a059181efbf21c5421f3561",
+      "evaluated_at": "2026-10-28",
+      "backend": "StartLux HTTP",
+      "inference_note": "Instant profile; think_mode=never; task-specific temperatures.",
+      "settings": {
+        "concurrency": 1,
+        "timeout_seconds": 900,
+        "transport_retries": 1,
+        "max_input_tokens": 65536,
+        "dtype": "bfloat16",
+        "temperature_by_kind": {
+          "noul": 1.7238,
+          "choice": 1.0867,
+          "score": 1.1841
+        },
+        "think_mode": "never",
+        "gate": 0.9,
+        "think_budget": 4096,
+        "mix": 0.75,
+        "allow_none": false,
+        "none_check": true
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 394,
+        "accuracy": 0.788,
+        "probabilistic": 500,
+        "ece": 0.04417581870030072,
+        "brier": 0.25917429923056867
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 75,
+          "accuracy": 0.8333333333333334,
+          "probabilistic": 90,
+          "ece": 0.05544378201654413,
+          "brier": 0.19525988499703742
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 63,
+          "accuracy": 0.7,
+          "probabilistic": 90,
+          "ece": 0.11454190193206952,
+          "brier": 0.3860992514729487
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.1454744782219577,
+          "brier": 0.2432472674397451
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.65,
+          "probabilistic": 100,
+          "ece": 0.1631186472472559,
+          "brier": 0.4078826199811282
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 70,
+          "accuracy": 0.875,
+          "probabilistic": 80,
+          "ece": 0.027360365895470584,
+          "brier": 0.14952885200457613
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 57,
+          "accuracy": 0.95,
+          "probabilistic": 60,
+          "ece": 0.037066318940548494,
+          "brier": 0.08424126298878448
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "7320c173e0ff25b56fda5fbe69b637744e5f8a6693d22e4974cc223f6342d008",
+        "predictions_sha256": "d5c0800ecad0ff12e0cde686a11fe15a313cf38281f488a68d1bb608ed7e371a",
+        "source_scores_sha256": "2844f3ebdc23de2dd3d0dcde0df043ed43b5e273b9e06801b2ee4a788a7fc7ef",
+        "model_files_sha256": {
+          "config.json": "fb4bbaf0e92a82a4984e109b938085cedb2ac2491e082ee711039be315f84527",
+          "decision_config.json": "42453cbf44b01c48d26284af1200181d3122074c5c119c052d7ad56817010663"
+        }
+      }
+    },
+    {
+      "id": "20261028-inception-mercury-decide",
+      "model": "Mercury Decide (Inception)",
+      "model_id": "inception/mercury-decide",
+      "model_revision": null,
+      "evaluated_at": "2026-10-28",
+      "backend": "Hosted decision API",
+      "inference_note": "Provider-managed inference settings.",
+      "settings": {
+        "concurrency": 1,
+        "max_input_tokens": null,
+        "seed": "provider_controlled",
+        "temperature": "provider_controlled",
+        "calibration": "provider_controlled",
+        "dtype": "provider_controlled",
+        "attn_implementation": "provider_controlled",
+        "timeout_seconds": 900,
+        "transport_retries": 1
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 392,
+        "accuracy": 0.784,
+        "probabilistic": 500,
+        "ece": 0.1415550116075889,
+        "brier": 0.3600363106482836
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 76,
+          "accuracy": 0.8444444444444444,
+          "probabilistic": 90,
+          "ece": 0.12092447972708552,
+          "brier": 0.26991180622634936
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 70,
+          "accuracy": 0.7777777777777778,
+          "probabilistic": 90,
+          "ece": 0.1763003763639335,
+          "brier": 0.38612170319367883
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.8125,
+          "probabilistic": 80,
+          "ece": 0.0511665968185037,
+          "brier": 0.2520136690190554
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 71,
+          "accuracy": 0.71,
+          "probabilistic": 100,
+          "ece": 0.25282547977342873,
+          "brier": 0.5087324448355177
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.1262603525554888,
+          "brier": 0.2989190010532237
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 46,
+          "accuracy": 0.7666666666666667,
+          "probabilistic": 60,
+          "ece": 0.21558909539815133,
+          "brier": 0.43378802311675374
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "005af0ef2586b6879e0b0401c7031fefc6897ce9acb05520d597d20429a18721",
+        "predictions_sha256": "ed1e357b2c9f82fdd8a32fdec022487a1e92d67deb56b16862133704f7cfc499",
+        "source_scores_sha256": "c3ba6b9e9f2b4234ec9bfae91f90133871bd4b304acda300ff6fe3981b0e3924"
+      }
+    },
+    {
+      "id": "20261028-tattrongvu-jeffan-31b-1710",
+      "model": "Jeffan-31B-1710",
+      "model_id": "tattrongvu/Jeffan-31b-1710",
+      "model_revision": "cebfa86c2bed2b5c83b12e44de4374b20c87fd79",
+      "evaluated_at": "2026-10-28",
+      "backend": "DM Decision Engine",
+      "inference_note": "Restricted option-code probabilities; conditional reread below confidence 0.9.",
+      "settings": {
+        "kind": "dm-decision-engine",
+        "reread_below": 0.9,
+        "max_len": 98304,
+        "max_batched_tokens": 4096,
+        "kv_dtype": null,
+        "layout": "state_first",
+        "option_order": "request order (no permutation)",
+        "quantization": null
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 372,
+        "accuracy": 0.744,
+        "probabilistic": 500,
+        "ece": 0.08270745531872847,
+        "brier": 0.37311919521826564
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 69,
+          "accuracy": 0.7666666666666667,
+          "probabilistic": 90,
+          "ece": 0.11831205748540412,
+          "brier": 0.32599051424070846
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 60,
+          "accuracy": 0.6666666666666666,
+          "probabilistic": 90,
+          "ece": 0.15132398441549014,
+          "brier": 0.47388514956747047
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.10698314174142798,
+          "brier": 0.28845840448536136
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 76,
+          "accuracy": 0.76,
+          "probabilistic": 100,
+          "ece": 0.054121223389833634,
+          "brier": 0.2904119541892073
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 67,
+          "accuracy": 0.8375,
+          "probabilistic": 80,
+          "ece": 0.05874886353900518,
+          "brier": 0.2177944636941635
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 36,
+          "accuracy": 0.6,
+          "probabilistic": 60,
+          "ece": 0.3718875969926759,
+          "brier": 0.7504893832185637
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "8a7bc8bcb987beb110a818065717b9ee1b92e60809505ba307f496615f189b6d",
+        "predictions_sha256": "9d089d354b0525f4c8e854cd25b1855d3905453eddf7479e15c763a0a4a891e0",
+        "source_scores_sha256": "98468a7c09e6b9cd68032ec2c04d3743d447445779a44849a8096d02afc42737"
+      }
+    },
+    {
+      "id": "20261028-typesafe-jev-1-14",
+      "model": "Jev 1.14",
+      "model_id": "typesafe/jev-1.14",
+      "model_revision": null,
+      "evaluated_at": "2026-10-28",
+      "backend": "Hosted decision API",
+      "inference_note": "Provider-managed inference settings.",
+      "settings": {
+        "concurrency": 1,
+        "max_input_tokens": null,
+        "seed": "provider_controlled",
+        "temperature": "provider_controlled",
+        "calibration": "provider_controlled",
+        "dtype": "provider_controlled",
+        "attn_implementation": "provider_controlled",
+        "timeout_seconds": 900,
+        "transport_retries": 1
+      },
+      "overall": {
+        "total": 500,
+        "valid": 476,
+        "missing": 24,
+        "correct": 369,
+        "accuracy": 0.738,
+        "probabilistic": 476,
+        "ece": null,
+        "brier": null
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 73,
+          "accuracy": 0.8111111111111111,
+          "probabilistic": 90,
+          "ece": 0.06455555555555556,
+          "brier": 0.2730688888888889
+        },
+        "D2": {
+          "total": 90,
+          "valid": 68,
+          "missing": 22,
+          "correct": 55,
+          "accuracy": 0.6111111111111112,
+          "probabilistic": 68,
+          "ece": null,
+          "brier": null
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.8125,
+          "probabilistic": 80,
+          "ece": 0.10000000000000016,
+          "brier": 0.23062250000000004
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 71,
+          "accuracy": 0.71,
+          "probabilistic": 100,
+          "ece": 0.05539999999999998,
+          "brier": 0.3533960000000001
+        },
+        "D5": {
+          "total": 80,
+          "valid": 79,
+          "missing": 1,
+          "correct": 56,
+          "accuracy": 0.7,
+          "probabilistic": 79,
+          "ece": null,
+          "brier": null
+        },
+        "D6": {
+          "total": 60,
+          "valid": 59,
+          "missing": 1,
+          "correct": 49,
+          "accuracy": 0.8166666666666667,
+          "probabilistic": 59,
+          "ece": null,
+          "brier": null
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "6bfef0bba8213c769feeb40f832d340e25a6c122c7541eed0ee51849d51609f9",
+        "predictions_sha256": "afbf9d4f2042cd1c7a7163bf4132ca647e72e9722a0430250b8e604d9fb50b2f",
+        "source_scores_sha256": "f637157f1be11b0d3f5f12daa71e6e5cffa9ef097fef45e331451491f701d31f"
+      }
+    },
+    {
+      "id": "20261028-clef-27b-original",
+      "model": "Cloudflare Clef (27B)",
+      "model_id": "Clef-27B-original",
+      "model_revision": null,
+      "evaluated_at": "2026-10-28",
+      "backend": "Clef adapter · PyTorch",
+      "inference_note": "BF16, SDPA attention and temperature 1.",
+      "settings": {
+        "concurrency": 1,
+        "max_input_tokens": 65535,
+        "seed": 20261009,
+        "temperature": 1.0,
+        "calibration": "not_applicable",
+        "dtype": "bfloat16",
+        "attn_implementation": "sdpa",
+        "timeout_seconds": 900,
+        "transport_retries": 1
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 368,
+        "accuracy": 0.736,
+        "probabilistic": 500,
+        "ece": 0.07870974715426564,
+        "brier": 0.3670130839513295
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.7111111111111111,
+          "probabilistic": 90,
+          "ece": 0.12339265214072334,
+          "brier": 0.37749932468671027
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 56,
+          "accuracy": 0.6222222222222222,
+          "probabilistic": 90,
+          "ece": 0.2613364743896657,
+          "brier": 0.5941462874164395
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.06540127024054528,
+          "brier": 0.23948495938062786
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 67,
+          "accuracy": 0.67,
+          "probabilistic": 100,
+          "ece": 0.11645760655403137,
+          "brier": 0.4063181226376531
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 67,
+          "accuracy": 0.8375,
+          "probabilistic": 80,
+          "ece": 0.06193005070090294,
+          "brier": 0.24841708342726596
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 50,
+          "accuracy": 0.8333333333333334,
+          "probabilistic": 60,
+          "ece": 0.1063873385389646,
+          "brier": 0.2732410199664078
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "39b903e9b7cc48512d608f3c93f9033c32454f082d47d17b66be09db35de5018",
+        "predictions_sha256": "011efa272aed41c41dcacd45a72b9ce3310238dfadc4dabd7439c5964d90478e",
+        "source_scores_sha256": "2c979af1bc849eb7cae310febe5f12eb4b4d6de140ea3442e7408759bf55a0a9",
+        "model_files_sha256": {
+          "config.json": "c42e88892bd3fd84e8276b2ad90df58c1c3b797676ea161035006a72ad468c58",
+          "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+          "joint_head_config.json": "890be585d75b981201eb96a35f98a9967afe37bc8d220cfdea2e72d56507534f",
+          "joint_schema_model.py": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3"
+        }
+      }
+    },
+    {
+      "id": "20261028-microsoft-microsoft-decision-1",
+      "model": "Microsoft Decision-1",
+      "model_id": "microsoft/microsoft-decision-1",
+      "model_revision": null,
+      "evaluated_at": "2026-10-28",
+      "backend": "Hosted decision API",
+      "inference_note": "Provider-managed inference settings.",
+      "settings": {
+        "concurrency": 1,
+        "max_input_tokens": null,
+        "seed": "provider_controlled",
+        "temperature": "provider_controlled",
+        "calibration": "provider_controlled",
+        "dtype": "provider_controlled",
+        "attn_implementation": "provider_controlled",
+        "timeout_seconds": 900,
+        "transport_retries": 1
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 363,
+        "accuracy": 0.726,
+        "probabilistic": 500,
+        "ece": 0.09483917038370823,
+        "brier": 0.37974829420123524
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 68,
+          "accuracy": 0.7555555555555555,
+          "probabilistic": 90,
+          "ece": 0.09677777141548798,
+          "brier": 0.2735970483675143
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 55,
+          "accuracy": 0.6111111111111112,
+          "probabilistic": 90,
+          "ece": 0.12459094498523658,
+          "brier": 0.5322846724540076
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.8125,
+          "probabilistic": 80,
+          "ece": 0.1496722499203465,
+          "brier": 0.25391343393635013
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 71,
+          "accuracy": 0.71,
+          "probabilistic": 100,
+          "ece": 0.1574941211547819,
+          "brier": 0.4250078015986404
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.099619154813269,
+          "brier": 0.27136282686518565
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 40,
+          "accuracy": 0.6666666666666666,
+          "probabilistic": 60,
+          "ece": 0.2569480561422582,
+          "brier": 0.5470318533782309
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "c28bae3485b9d59dab2037e8098f9bac927bf94a39dd33586fe09a73fb662fff",
+        "predictions_sha256": "54cf72623906f8d9fd04d7874b05fcda9f6448f30ae596e667d311ab067b317c",
+        "source_scores_sha256": "7b67d9169fbef953859a6038dc78987c8c89331b0e46fd942fd251b70997dec6"
+      }
+    },
+    {
+      "id": "20261028-openai-gpt-6-luna-decisions",
+      "model": "GPT-6 Luna Decisions",
+      "model_id": "openai/gpt-6-luna-decisions",
+      "model_revision": null,
+      "evaluated_at": "2026-10-28",
+      "backend": "Hosted decision API",
+      "inference_note": "Provider-managed inference settings.",
+      "settings": {
+        "concurrency": 1,
+        "max_input_tokens": null,
+        "seed": "provider_controlled",
+        "temperature": "provider_controlled",
+        "calibration": "provider_controlled",
+        "dtype": "provider_controlled",
+        "attn_implementation": "provider_controlled",
+        "timeout_seconds": 900,
+        "transport_retries": 1
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 356,
+        "accuracy": 0.712,
+        "probabilistic": 500,
+        "ece": 0.10473999999999996,
+        "brier": 0.41615440000000037
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 69,
+          "accuracy": 0.7666666666666667,
+          "probabilistic": 90,
+          "ece": 0.19299999999999998,
+          "brier": 0.4251311111111112
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 59,
+          "accuracy": 0.6555555555555556,
+          "probabilistic": 90,
+          "ece": 0.2934444444444445,
+          "brier": 0.6174066666666664
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.10050000000000006,
+          "brier": 0.28900750000000003
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.64,
+          "probabilistic": 100,
+          "ece": 0.07159999999999997,
+          "brier": 0.4274319999999998
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 63,
+          "accuracy": 0.7875,
+          "probabilistic": 80,
+          "ece": 0.03612499999999988,
+          "brier": 0.2543149999999999
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 37,
+          "accuracy": 0.6166666666666667,
+          "probabilistic": 60,
+          "ece": 0.16266666666666668,
+          "brier": 0.4673300000000001
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "987b21ce92e2d141b6330bc15e7307959a98559ad6b2626f4c3bd3a42c529a9f",
+        "predictions_sha256": "fb075d54122eeef31bf3c4cc3bc37ac61761198b925ef868813d217d19380b84",
+        "source_scores_sha256": "60afedc282fbb4d04dea20567bfeecf63934722062829e4fe0b575dbe55373b5"
+      }
+    },
+    {
+      "id": "20261028-strands-decider-26b-a4b-gemma4-v1-2610",
+      "model": "Strands Decider 26B-A4B (Gemma 4)",
+      "model_id": "strands-decider-26B-A4B-gemma4-v1-2610",
+      "model_revision": "3ca5dfe2d5aa758ae162b6249729181f1d13ed65",
+      "evaluated_at": "2026-10-28",
+      "backend": "Strands adapter · PyTorch",
+      "inference_note": "BF16, SDPA attention and temperature 1.",
+      "settings": {
+        "concurrency": 1,
+        "max_input_tokens": 65535,
+        "seed": 20261009,
+        "temperature": 1.0,
+        "calibration": "disabled",
+        "dtype": "bfloat16",
+        "attn_implementation": "sdpa",
+        "timeout_seconds": 900,
+        "transport_retries": 1,
+        "temperature_by_kind": {}
+      },
+      "overall": {
+        "total": 500,
+        "valid": 500,
+        "missing": 0,
+        "correct": 303,
+        "accuracy": 0.606,
+        "probabilistic": 500,
+        "ece": 0.07787282036058604,
+        "brier": 0.48725102816630084
+      },
+      "by_subset": {
+        "D1": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 65,
+          "accuracy": 0.7222222222222222,
+          "probabilistic": 90,
+          "ece": 0.08064552346865336,
+          "brier": 0.355074112166988
+        },
+        "D2": {
+          "total": 90,
+          "valid": 90,
+          "missing": 0,
+          "correct": 27,
+          "accuracy": 0.3,
+          "probabilistic": 90,
+          "ece": 0.1431385930110183,
+          "brier": 0.7984375182547944
+        },
+        "D3": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 64,
+          "accuracy": 0.8,
+          "probabilistic": 80,
+          "ece": 0.15433199070394038,
+          "brier": 0.291122529332755
+        },
+        "D4": {
+          "total": 100,
+          "valid": 100,
+          "missing": 0,
+          "correct": 58,
+          "accuracy": 0.58,
+          "probabilistic": 100,
+          "ece": 0.12687833189964295,
+          "brier": 0.4837731569488838
+        },
+        "D5": {
+          "total": 80,
+          "valid": 80,
+          "missing": 0,
+          "correct": 52,
+          "accuracy": 0.65,
+          "probabilistic": 80,
+          "ece": 0.10304241068661213,
+          "brier": 0.43439229558926123
+        },
+        "D6": {
+          "total": 60,
+          "valid": 60,
+          "missing": 0,
+          "correct": 37,
+          "accuracy": 0.6166666666666667,
+          "probabilistic": 60,
+          "ece": 0.1770725205540657,
+          "brier": 0.5565160942756706
+        }
+      },
+      "evidence": {
+        "raw_results_sha256": "7ed68fb5010466b593a21fb2f702be53e9eecd9b6c306505fb65c170b33d4bca",
+        "predictions_sha256": "5a169927fc69583ee4bc384b93814fdcc5b6c08bb806252f09319b62fdc323ec",
+        "source_scores_sha256": "b9a58a51920a6ebad65a0932b69df03c1f82773b71f70136534ca7f05c05e5ac",
+        "model_files_sha256": {
+          "tokenizer.json": "30383f3ce90a169cbabe9eb3da7bb77988bf906aad2e59184b378f5470ec4dbd",
+          "strands_decider_config.json": "c9d2d08ce11ba1e07c33069d1fa4494384797c981f076fc69ba563dfd3ef6dc3",
+          "head.safetensors": "026c2b5fdc76582470674ed444aa464ab6d963fba40fe72f41055bb09ab4f119"
+        }
+      }
+    }
+  ]
+}

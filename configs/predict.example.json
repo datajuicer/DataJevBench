@@ -1,0 +1,5 @@
+{
+  "factory": "native:Native",
+  "factory_options": {"kind": "glide"},
+  "source_files": []
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataJevBench v0.5</title>
+  <meta name="description" content="500 tasks evaluating decisions in data workflows: filtering, processing, quality, evidence and workflow control.">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#">DataJevBench</a><nav aria-label="Main"><a href="#overview-title">Benchmark</a><a href="#board">Results</a><span class="release">v0.5</span></nav></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Data decision evaluation</p>
+      <h1>Decisions throughout<br><em>a data workflow.</em></h1>
+      <p class="intro">DataJevBench evaluates how models filter records, select processing steps, judge quality, assess evidence and choose the next action.</p>
+      <p class="section-copy">Each choice shapes the data and conclusions that follow. The benchmark presents these decision points with a workflow state, an instruction and candidate answers, so models can be compared using shared inputs and scoring.</p>
+      <div class="facts"><div><strong>500</strong><span>tasks</span></div><div><strong>6</strong><span>subsets</span></div><div><strong>EN · ZH</strong><span>instruction languages</span></div></div>
+    </section>
+    <section class="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">What is measured</h2>
+      <p class="section-copy">Six categories cover data admission, processing plans, output quality, information sufficiency, evidence and privacy, and workflow control. The task set contains 480 choice questions and 20 ordinal score questions, with 60% English and 40% Chinese instructions.</p>
+      <figure class="feature-figure"><a href="../assets/task-atlas.png"><img src="../assets/task-atlas.png" width="800" height="560" alt="Six data decision subsets arranged around a task distribution chart, each with a small workflow illustration and a brief description."></a><figcaption>Illustrative decisions across the six subsets.</figcaption></figure>
+    </section>
+    <section id="board" class="board" aria-labelledby="board-title">
+      <div class="section-heading"><h2 id="board-title">Evaluation results</h2><span id="snapshot" class="snapshot"></span></div>
+      <p class="section-copy">Compare overall decision accuracy and the six capabilities. Select a model to explore its scores and inference configuration.</p>
+      <div class="board-tools"><div class="view-switch" role="group" aria-label="Result view"><button type="button" data-view="overall" aria-pressed="true" disabled>Overall</button><button type="button" data-view="subsets" aria-pressed="false" disabled>D1–D6</button></div><a href="../results/leaderboard.json" class="data-link">Result data ↗</a></div>
+      <p id="board-status" class="section-note" role="status">Loading results…</p>
+      <noscript><p><a href="../results/leaderboard.json">Read the result snapshot</a> for model and subset scores.</p></noscript>
+      <p class="scroll-hint">Scroll horizontally for more metrics.</p>
+      <div id="result-table" class="table-wrap" tabindex="0" role="region" aria-label="Model results" hidden><table><caption class="sr-only" id="table-caption">Model accuracy, valid answers and calibration</caption><thead id="columns"></thead><tbody id="rows"></tbody></table></div>
+      <p class="section-note">Accuracy uses all 500 tasks; ranks follow overall Accuracy with ties. Valid answers show coverage. ECE10 and Brier use complete probability outputs. Each model's settings appear in its details.</p>
+      <section id="detail" class="detail" aria-labelledby="detail-title" hidden>
+        <p class="eyebrow">Model profile</p><h3 id="detail-title"></h3><p id="detail-meta" class="model-meta"></p>
+        <div id="detail-grid" class="detail-grid"></div>
+        <p id="inference-note" class="section-note"></p>
+        <details class="run-info"><summary>Inference settings and result identifiers</summary><dl id="run-identity"></dl><pre id="run-settings"></pre></details>
+      </section>
+    </section>
+    <section class="method" aria-labelledby="method-title">
+      <h2 id="method-title">How evaluation works</h2>
+      <div class="cards">
+        <article><span>01</span><h3>Shared task inputs</h3><p>Each task supplies the complete workflow state, question and ordered answer labels. Expected answers stay with the evaluator.</p></article>
+        <article><span>02</span><h3>Model-specific inference</h3><p>Models use their own prompting, answer calculation and serving implementation through a Python adapter or SystemOne HTTP endpoint.</p></article>
+        <article><span>03</span><h3>Decision accuracy</h3><p>Accuracy is correct answers divided by 500. Subset scores describe each capability. Complete probability outputs also support ECE10 and Brier metrics.</p></article>
+      </div>
+      <p class="section-note">v0.5 accepts probability sums within 1e-3 of one and scores the accepted values as returned. All 500 tasks and reference answers are included under benchmark/ with normalized public IDs. The published scores retain their original measurement identities.</p>
+      <p class="section-note">To share results, open an Issue in the repository with the model/checkpoint, scores.json and inference settings or a code reference.</p>
+    </section>
+  </main>
+  <footer>DataJevBench v0.5 · Apache-2.0 code · Public dataset SHA256 <code>c70fdb38…bf3588</code></footer>
+</body>
+</html>

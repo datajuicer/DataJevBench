@@ -1,0 +1,8 @@
+{
+  "endpoint": "http://127.0.0.1:8000/v1/systemone",
+  "model_id": "your-model",
+  "expected_returned_models": ["your-model-revision"],
+  "timeout_seconds": 900,
+  "transport_retries": 1,
+  "retry_delay_seconds": 1
+}

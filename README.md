@@ -1,11 +1,31 @@
-# DataJevBench
+<h1 align="center">DataJevBench</h1>
 
-[English](README.md) · [简体中文](README.zh-CN.md)
+<p align="center">
+  <a href="README.md"><strong>English</strong></a> ·
+  <a href="README.zh-CN.md">简体中文</a>
+</p>
 
-**Evaluating decisions in data workflows.**<br>
-500 tasks · 6 subsets · English + Chinese · v0.5
+<p align="center">
+  <a href="benchmark/README.md"><img alt="500 tasks" src="https://img.shields.io/badge/tasks-500-2ea44f"></a>
+  <a href="#what-is-measured"><img alt="6 subsets" src="https://img.shields.io/badge/subsets-6-8250df"></a>
+  <a href="#results"><img alt="14 evaluated models" src="https://img.shields.io/badge/evaluated_models-14-0969da"></a>
+  <a href="https://github.com/datajuicer"><img alt="DataJuicer Team" src="https://img.shields.io/badge/team-DataJuicer-0969da?logo=github"></a>
+  <a href="https://github.com/datajuicer/data-juicer"><img alt="Supported by Data-Juicer" src="https://img.shields.io/badge/supported_by-Data--Juicer-e68a00?logo=github"></a>
+  <a href="LICENSE"><img alt="Data license: MIT; source terms apply" src="https://img.shields.io/badge/data_license-MIT-blue"></a>
+</p>
 
-[Design](docs/design.md) · [Results](#results) · [Quick start](#quick-start) · [Contributing](docs/CONTRIBUTING.md) · [Citation](#citation)
+<p align="center">
+  <strong>Evaluating decisions in data workflows.</strong><br>
+  500 tasks · 6 subsets · English + Chinese · v0.5
+</p>
+
+<p align="center">
+  <a href="docs/design.md">Design</a> ·
+  <a href="#results">Results</a> ·
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="docs/CONTRIBUTING.md">Contributing</a> ·
+  <a href="#citation">Citation</a>
+</p>
 
 ---
 

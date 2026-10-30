@@ -1,11 +1,31 @@
-# DataJevBench
+<h1 align="center">DataJevBench</h1>
 
-[English](README.md) · [简体中文](README.zh-CN.md)
+<p align="center">
+  <a href="README.md">English</a> ·
+  <a href="README.zh-CN.md"><strong>简体中文</strong></a>
+</p>
 
-**面向数据工作流的决策能力评测。**<br>
-500 道题 · 6 个子集 · 中英双语 · v0.5
+<p align="center">
+  <a href="benchmark/README.md"><img alt="500 道题" src="https://img.shields.io/badge/tasks-500-2ea44f"></a>
+  <a href="#测什么"><img alt="6 个子集" src="https://img.shields.io/badge/subsets-6-8250df"></a>
+  <a href="#评测结果"><img alt="14 个已评测模型" src="https://img.shields.io/badge/evaluated_models-14-0969da"></a>
+  <a href="https://github.com/datajuicer"><img alt="DataJuicer Team" src="https://img.shields.io/badge/team-DataJuicer-0969da?logo=github"></a>
+  <a href="https://github.com/datajuicer/data-juicer"><img alt="由 Data-Juicer 提供支持" src="https://img.shields.io/badge/supported_by-Data--Juicer-e68a00?logo=github"></a>
+  <a href="LICENSE"><img alt="数据许可：MIT；第三方来源条款继续适用" src="https://img.shields.io/badge/data_license-MIT-blue"></a>
+</p>
 
-[任务设计](docs/design.md) · [评测结果](#评测结果) · [快速开始](#快速开始) · [贡献指南](docs/CONTRIBUTING.md) · [引用](#引用)
+<p align="center">
+  <strong>面向数据工作流的决策能力评测。</strong><br>
+  500 道题 · 6 个子集 · 中英双语 · v0.5
+</p>
+
+<p align="center">
+  <a href="docs/design.md">任务设计</a> ·
+  <a href="#评测结果">评测结果</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="docs/CONTRIBUTING.md">贡献指南</a> ·
+  <a href="#引用">引用</a>
+</p>
 
 ---
 

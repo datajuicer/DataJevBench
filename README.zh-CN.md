@@ -128,7 +128,7 @@ PYTHONDONTWRITEBYTECODE=1 python scripts/check_repo.py
 
 ## 数据与许可证
 
-代码、文档和插图采用 [Apache-2.0](LICENSE)，署名声明保留在 [NOTICE](docs/NOTICE)。500 题及参考答案已包含在仓库中；[数据说明](benchmark/README.md)列出文件结构和哈希校验要求，[发布说明](docs/data-publication.md)记录 ID 与元数据的规范化方式。底层数据来源继续保留各自的条款与署名，见[来源说明](releases/v0.5/source-notices.md)。
+题目数据中项目自有的贡献采用 [MIT](LICENSE)，第三方来源材料继续适用各自的条款与署名，见[来源说明](releases/v0.5/source-notices.md)。项目自身的代码、文档和插图尚待所有者确定许可证，数据许可不自动覆盖这些文件。署名声明保留在 [NOTICE](docs/NOTICE)。500 题及参考答案已包含在仓库中；[数据说明](benchmark/README.md)列出文件结构和哈希校验要求，[发布说明](docs/data-publication.md)记录 ID 与元数据的规范化方式。
 
 ## 仓库导航
 
@@ -141,7 +141,7 @@ PYTHONDONTWRITEBYTECODE=1 python scripts/check_repo.py
 ```bibtex
 @misc{datajevbench,
   title = {DataJevBench: Evaluating Decisions in Data Workflows},
-  author = {{DataJevBench contributors}},
+  author = {{Data-Juicer Team}},
   year = {2026},
   url = {https://github.com/datajuicer/DataJevBench},
   note = {Benchmark v0.5}

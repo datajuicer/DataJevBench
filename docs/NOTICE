@@ -1,6 +1,8 @@
 DataJevBench
 Copyright (c) 2026 DataJuicer
 
-Code, documentation and illustrations are distributed under Apache-2.0.
+Project-authored benchmark data is licensed under MIT as specified in LICENSE.
+Repository-specific code, documentation and illustrations still need an
+owner-selected license; the data license does not automatically cover them.
 Benchmark source attribution and data terms are recorded in
 releases/v0.5/source-notices.md (relative to the repository root).

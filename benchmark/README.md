@@ -31,4 +31,4 @@ Original data and old/new ID mappings remain with the maintainer outside this pu
 
 To use public copies stored elsewhere, pass `--dataset /path/to/records.jsonl --inputs /path/to/inputs.jsonl` to `verify`, `run` or `score`.
 
-[Source terms and attribution](../releases/v0.5/source-notices.md) continue to apply to the data. Apache-2.0 covers code, documentation and illustrations, and does not replace underlying source terms.
+Project-authored contributions in both public data files use [MIT](../LICENSE). Third-party material retains its [source terms and attribution](../releases/v0.5/source-notices.md). The data license does not automatically cover repository-specific code, documentation or illustrations, whose license remains to be selected by the owner.

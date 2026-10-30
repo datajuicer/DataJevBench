@@ -128,7 +128,7 @@ PYTHONDONTWRITEBYTECODE=1 python scripts/check_repo.py
 
 ## Data and license
 
-Code, documentation and illustrations use [Apache-2.0](LICENSE); attribution is retained in [NOTICE](docs/NOTICE). All 500 tasks and reference answers are included. [Data format](benchmark/README.md) documents the files and hash checks; [publication notes](docs/data-publication.md) record the original-to-public ID and metadata projection. Underlying sources retain their terms and attribution in the [source notices](releases/v0.5/source-notices.md).
+Benchmark data uses [MIT](LICENSE) for project-authored contributions; third-party source terms and attribution remain in the [source notices](releases/v0.5/source-notices.md). Repository-specific code, documentation and illustrations still need an owner-selected license; the data license does not automatically cover them. Attribution is retained in [NOTICE](docs/NOTICE). All 500 tasks and reference answers are included. [Data format](benchmark/README.md) documents the files and hash checks; [publication notes](docs/data-publication.md) record the original-to-public ID and metadata projection.
 
 ## Repository guide
 
@@ -141,7 +141,7 @@ Code, documentation and illustrations use [Apache-2.0](LICENSE); attribution is 
 ```bibtex
 @misc{datajevbench,
   title = {DataJevBench: Evaluating Decisions in Data Workflows},
-  author = {{DataJevBench contributors}},
+  author = {{Data-Juicer Team}},
   year = {2026},
   url = {https://github.com/datajuicer/DataJevBench},
   note = {Benchmark v0.5}

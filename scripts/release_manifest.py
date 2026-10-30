@@ -8,7 +8,7 @@ import shutil
 import subprocess
 
 
-PUBLICATION_VERSION = "0.5.4"
+PUBLICATION_VERSION = "0.5.5"
 PUBLICATION_MANIFEST = "releases/publication.json"
 DATA_FILES = ("benchmark/records.jsonl", "benchmark/inputs.jsonl")
 

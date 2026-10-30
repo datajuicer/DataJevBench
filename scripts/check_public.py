@@ -79,7 +79,7 @@ def check(root):
     except (ValueError, KeyError, TypeError) as exc:
         errors.append(f"Result snapshot: {exc}")
     if not (root / "LICENSE").is_file():
-        errors.append("Missing code license")
+        errors.append("Missing licensing notice")
     try:
         check_manifest(root)
     except (ValueError, OSError) as exc:

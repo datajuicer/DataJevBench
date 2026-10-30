@@ -1,12 +1,14 @@
 # DataJevBench v0.5 metadata
 
-The repository provides the evaluator, inference interfaces, task metadata, documentation and illustrations under [Apache-2.0](../LICENSE). The 500 tasks and reference answers are included in [benchmark/](../benchmark/README.md), with normalized public IDs and minimal provenance. [Source notices](../releases/v0.5/source-notices.md) describe the data's applicable terms and attribution.
+The 500 tasks and reference answers are included in [benchmark/](../benchmark/README.md), with normalized public IDs and minimal provenance. Project-authored data contributions use [MIT](../LICENSE); repository-specific code, documentation and illustrations still need an owner-selected license. [Source notices](../releases/v0.5/source-notices.md) preserve third-party terms and attribution.
 
 Source publication revisions are recorded separately in [releases/publication.json](../releases/publication.json). Benchmark content stays at 0.5. Publication 0.5.2 changes the serialized task/input hashes through ID and metadata normalization; model-visible content, references and scorer bytes are unchanged. The original hashes remain in `source_files` and the [source manifest](../releases/v0.5/source-manifest.json). See [ID policy](data-publication.md).
 
 Publication 0.5.3 adds the external `predict(state, questions)` bridge, shared typed-answer validation and offline response replay. Dataset, scorer and historical results are unchanged. Model runtime code and weights remain external; see [deployment](deployment.md).
 
 Publication 0.5.4 consolidates contribution and attribution documents under `docs/`, moves source-publication hashes to `releases/publication.json`, and replaces the custom build script with declarative packaging configuration. Benchmark content and scoring are unchanged.
+
+Publication 0.5.5 adopts a data-only MIT grant for project-authored contributions, preserves third-party source terms, and marks the repository-specific code, documentation and illustration license as pending owner selection. Citation authorship is Data-Juicer Team. Earlier license grants are not revoked; benchmark content and scoring are unchanged.
 
 ## Task set
 

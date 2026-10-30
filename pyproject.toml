@@ -7,8 +7,7 @@ name = "datajevbench-leaderboard"
 version = "0.5"
 description = "DataJevBench v0.5 evaluation of decisions in data workflows"
 readme = "README.md"
-license = "Apache-2.0"
-license-files = ["LICENSE", "docs/NOTICE"]
+license-files = ["LICENSE", "docs/NOTICE", "releases/v0.5/source-notices.md"]
 requires-python = ">=3.10"
 dependencies = []
 
